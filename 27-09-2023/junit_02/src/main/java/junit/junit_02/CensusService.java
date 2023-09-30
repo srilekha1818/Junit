@@ -1,6 +1,4 @@
-package in.ineuron.nitin.service;
-
-import java.util.function.BooleanSupplier;
+package junit.junit_02;
 
 public class CensusService {
 
@@ -22,7 +20,6 @@ public class CensusService {
 	}
 
 	public Boolean isEmpty(String name) {
-		// TODO Auto-generated method stub
 		return name.isEmpty();
 	}
 }

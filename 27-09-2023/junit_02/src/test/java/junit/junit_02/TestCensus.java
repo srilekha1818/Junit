@@ -1,4 +1,4 @@
-package in.ineuron.nitin.test;
+package junit.junit_02;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -12,7 +12,6 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.NullAndEmptySource;
 import org.junit.jupiter.params.provider.ValueSource;
 
-import in.ineuron.nitin.service.CensusService;
 
 public class TestCensus {
 	private static CensusService service;
@@ -20,10 +19,9 @@ public class TestCensus {
 	public static void setupOnce() {
 		service=new CensusService();
 	}
-
+    @Disabled
 	@DisplayName("Test Export Dta")
 	@RepeatedTest(value=10,name="execution of {displayName}-{currentRepetition}/{totalRepetitions}")
-	@Disabled
 	public  void TestExportedData() {
 		System.out.println("Testing the Exported the data");
 		CensusService service=new CensusService();
@@ -31,21 +29,19 @@ public class TestCensus {
 		
 
 	}
+    @Disabled
 	@ParameterizedTest
 	@ValueSource(ints= {10,21,32,87,13})
-	@Disabled
 	public void testisOdd(int data) {
 		System.out.println("TestCensus.testisOdd():"+data);
 		boolean result=service.isOdd(data);
 		assertTrue(result);
 		
 	}
-	@AfterAll
-	public static void cleanupOnce() {
-		service=null;
-	}
+	
 	@ParameterizedTest
 	@ValueSource(strings={"sachin","dhoni","ram"})
+	@Disabled
 	public void testisString(String data) {
 		System.out.println("TestCensus.testisString(data):"+data);
 		String actual=service.isString(data);
@@ -60,7 +56,10 @@ public class TestCensus {
 		assertTrue(service.isEmpty(data));
 		
 	}
-	
+	@AfterAll
+	public static void cleanupOnce() {
+		service=null;
+	}
 	
 
 }

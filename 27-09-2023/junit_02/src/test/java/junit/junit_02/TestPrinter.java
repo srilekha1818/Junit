@@ -1,4 +1,4 @@
-package in.ineuron.nitin.test;
+package junit.junit_02;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
@@ -6,7 +6,6 @@ import static org.junit.jupiter.api.Assertions.fail;
 
 import org.junit.jupiter.api.Test;
 
-import in.ineuron.nitin.service.Printer;
 
 public class TestPrinter {
 	@Test

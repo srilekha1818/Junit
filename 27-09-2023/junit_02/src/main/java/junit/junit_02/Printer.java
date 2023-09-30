@@ -1,7 +1,7 @@
-package in.ineuron.nitin.service;
+package junit.junit_02;
 
 public class Printer {
-	private static Printer Instance;//=new Printer();
+	private static Printer Instance=new Printer();
 	
 
 	private Printer() {

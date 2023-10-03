@@ -2,24 +2,28 @@ package in.sri.login;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import org.junit.Test;
+//import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
+
 
 import com.meterware.httpunit.WebConversation;
 import com.meterware.httpunit.WebForm;
 import com.meterware.httpunit.WebResponse;
 
+@DisplayName("LoginTestApp")
 public class LoginTest {
+
 	private static WebConversation conversation;
+
 	@BeforeAll
 	public static void setUpOnce() {
-	conversation = new WebConversation();
+		conversation = new WebConversation();
 	}
+
 	@Test
-	
 	@DisplayName("Testing with Valid Inputs")
 	public void testWithValidCredentials() throws Exception {
 		System.out.println("LoginTest.testWithValidCredentials()");
@@ -51,7 +55,7 @@ public class LoginTest {
 		System.out.println("LoginTest.testWithInvalidCredentials()");
 		
 		// get response by sending the request to the URL
-		String url = "http://localhost:9999/HttpUnit-LoginApp/index.html";
+		String url = "http://localhost:8080/Login/index.html";
 		WebResponse response = conversation.getResponse(url);
 
 		// get access to the form from the response
@@ -78,7 +82,7 @@ public class LoginTest {
 		System.out.println("LoginTest.testWithNoInputs()");
 		
 		// get response by sending the request to the URL
-		String url = "http://localhost:9999/HttpUnit-LoginApp/index.html";
+		String url = "http://localhost:8080/Login/index.html";
 		WebResponse response = conversation.getResponse(url);
 
 		// get access to the form from the response
@@ -104,3 +108,4 @@ public class LoginTest {
 	}
 
 }
+

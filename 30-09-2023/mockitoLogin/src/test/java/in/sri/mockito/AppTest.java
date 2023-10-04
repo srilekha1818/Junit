@@ -1,4 +1,4 @@
-package mockito01.LoginTestApp;
+package in.sri.mockito;
 
 import static org.junit.Assert.assertTrue;
 
